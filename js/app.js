@@ -1,28 +1,27 @@
 Calci = {
--  clearPreview: function() {
-+  clear: function() {
+    clear: function() {
      $('#preview').html("");
-+    $('#result').html("0");    
+    $('#result').html("0");    
    },
    deleteCharFromPreview: function() {
      var preview = $('#preview').html();
      $('#preview').html(preview.slice(0, preview.length-1));
    },
-+  calculateResult: function() {
-+    $('#result').html(eval($('#preview').html()));
-+  },
+  calculateResult: function() {
+    $('#result').html(eval($('#preview').html()));
+  },
    handleKeyPress: function(key) {
      switch($(key).text()) {
      case "AC":
--      Calci.clearPreview();
-+      Calci.clear();
+      
+      Calci.clear();
        break;
      case "DEL":
        Calci.deleteCharFromPreview();
        break;
      case "=":
--      console.log($(key).text());
-+      Calci.calculateResult();
+      console.log($(key).text());
+      Calci.calculateResult();
        break;
      default:
        $('#preview').html(
