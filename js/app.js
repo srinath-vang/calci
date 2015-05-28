@@ -13,7 +13,6 @@ Calci = {
    handleKeyPress: function(key) {
      switch($(key).text()) {
      case "AC":
-      
       Calci.clear();
        break;
      case "DEL":
