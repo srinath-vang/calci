@@ -1,17 +1,39 @@
 Calci = {
-  handleKeyPress: function(key) {
-	  if(["AC", "DEL", "="].indexOf($(key).text()) == -1) {
-	    $('#preview').html(
-	      $('#preview').html() + $(key).text()
-	    );
-	  } else {
-	    console.log($(key).text());
-	  }
-	}
-};
-
-$(document).ready(function() {
-  $('.key').click(function(event){
-    Calci.handleKeyPress(this);
-  });
-}); 
+-  clearPreview: function() {
++  clear: function() {
+     $('#preview').html("");
++    $('#result').html("0");    
+   },
+   deleteCharFromPreview: function() {
+     var preview = $('#preview').html();
+     $('#preview').html(preview.slice(0, preview.length-1));
+   },
++  calculateResult: function() {
++    $('#result').html(eval($('#preview').html()));
++  },
+   handleKeyPress: function(key) {
+     switch($(key).text()) {
+     case "AC":
+-      Calci.clearPreview();
++      Calci.clear();
+       break;
+     case "DEL":
+       Calci.deleteCharFromPreview();
+       break;
+     case "=":
+-      console.log($(key).text());
++      Calci.calculateResult();
+       break;
+     default:
+       $('#preview').html(
+         $('#preview').html() + $(key).text()
+       );
+     }
+   }
+ };
+ 
+ $(document).ready(function() {
+   $('.key').click(function(event){
+     Calci.handleKeyPress(this);
+   });
+ });
