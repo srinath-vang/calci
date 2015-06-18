@@ -1,50 +1,54 @@
-.vcenter {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%); }
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Calci</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
 
-html {
-  background-color: #ecf0f1; }
-  html body {
-    height: 100vh; }
-  html #calculator {
-    width: 48vmin;
-    height: 84vmin;
-    background-color: #9b59b6;
-    color: #ecf0f1; }
-    html #calculator #result {
-      background-color: #2c3e50;
-      height: 16vmin;
-      text-align: right;
-      line-height: 16vmin;
-      font-size: 8vmin;
-      padding: 0 2vmin; }
-    html #calculator #preview {
-      background-color: #7f8c8d;
-      height: 8vmin;
-      text-align: right;
-      line-height: 8vmin;
-      font-size: 3vmin;
-      padding: 0 2vmin; }
-    html #calculator .key {
-      padding: 0;
-      height: 12vmin;
-      width: 12vmin;
-      background-color: #8e44ad;
-      box-sizing: border-box;
-      text-align: center;
-      line-height: 12vmin;
-      font-size: 3vmin; }
-      html #calculator .key#equals {
-        width: 24vmin; }
-      html #calculator .key#plus {
-        height: 24vmin;
-        line-height: 24vmin; }
-      html #calculator .key:hover {
-        background-color: #9b59b6; }
-      html #calculator .key:active {
-        background-color: #7f3d9b; }
-    html #calculator .key-group {
-      padding: 0; }
-
-/*# sourceMappingURL=main.css.map */
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery.hotkeys.js"></script>
+  <script src="js/app.js"></script>
+  
+  
+</head>
+<body>
+  <div id="calculator" class="container-fluid vcenter">
+    <div id="result" class="row">0</div>
+    <div id="preview" class="row"></div>
+    <div class="row key-row">
+      <div id="key-AC" class="col-xs-3 key" data-code="AC">AC</div>
+      <div id="key-MULTIPLY" class="col-xs-3 key" data-code="MULTIPLY">*</div>
+      <div id="key-DIVISION" class="col-xs-3 key" data-code="DIVISION">/</div>
+      <div id="key-DEL" class="col-xs-3 key" data-code="DEL">DEL</div>
+    </div>
+    <div class="row key-row">
+      <div class="col-xs-9 key-group">
+        <div class="container-fluid">
+          <div class="row key-row">
+            <div id="key-7" class="col-xs-4 key" data-code="7">7</div>
+            <div id="key-8" class="col-xs-4 key" data-code="8">8</div>
+            <div id="key-9" class="col-xs-4 key" data-code="9">9</div>
+            <div id="key-4" class="col-xs-4 key" data-code="4">4</div>
+            <div id="key-5" class="col-xs-4 key" data-code="5">5</div>
+            <div id="key-6" class="col-xs-4 key" data-code="6">6</div>
+            <div id="key-1" class="col-xs-4 key" data-code="1">1</div>
+            <div id="key-2" class="col-xs-4 key" data-code="2">2</div>
+            <div id="key-3" class="col-xs-4 key" data-code="3">3</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 key-group">
+        <div id="key-MINUS" class="key" data-code="MINUS">-</div>
+        <div id="key-PLUS" class="key" data-code="PLUS">+</div>
+      </div>
+    </div>
+    <div class="row key-row">
+      <div id="key-DOT" class="col-xs-3 key" data-code="DOT">.</div>
+      <div id="key-0" class="col-xs-3 key" data-code="0">0</div>
+      <div id="key-EQL" class="col-xs-6 key" data-code="EQL">=</div>
+    </div>
+  </div>
+</body>
+</html>
